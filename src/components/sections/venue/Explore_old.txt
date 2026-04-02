@@ -1,0 +1,909 @@
+"use client";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import RSVP from "@/components/common/RSVP";
+import Shop from "@/components/common/Shop";
+gsap.registerPlugin(ScrollTrigger);
+
+const Explore = () => {
+  const mainContainer = useRef();
+  const scrollContainer = useRef();
+  const MouseMoveHoverCont = useRef();
+  const textRefs = useRef([]);
+
+  const data = [
+    { id: 1, title: "JEMAA EL-FNAA", image: "/imgs/h1.webp" },
+    { id: 2, title: "BAHIA PALACE", image: "/imgs/h2.webp" },
+    { id: 3, title: "KOUTOUBIA MOSQUE", image: "/imgs/h3.webp" },
+    { id: 4, title: "MAJORELLE GARDEN", image: "/imgs/h4.webp" },
+    { id: 5, title: "SAADIAN TOMBS", image: "/imgs/h5.webp" },
+    // { id: 6, title: "MEDINA SOUKS", image: "/imgs/venue/horizontal_section/img6.webp" },
+    // { id: 7, title: "PALMERAIE", image: "/imgs/venue/horizontal_section/img1.webp" },
+    // { id: 8, title: "MENARA GARDENS", image: "/imgs/venue/horizontal_section/img2.webp" }
+  ];
+
+  
+
+  // Pre Load Animation
+  useGSAP(
+    () => {
+      gsap.set(".PLA", {
+        autoAlpha: 0,
+        y: 20,
+      });
+
+      gsap.from(".HiIMG", {
+        xPercent: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "none",
+      });
+
+      gsap.to(".PLA", {
+        autoAlpha: 1,
+        y: 0,
+        duration: 1.2,
+        stagger: 0.12,
+        ease: "power3.out",
+        delay: 0.2, // lets layout + pin settle
+      });
+    },
+    { scope: mainContainer },
+  );
+
+  // Horizontal Scroll Code
+  useGSAP(() => {
+    if (!mainContainer.current || !scrollContainer.current) return;
+
+    const totalScrollWidth =
+      scrollContainer.current.scrollWidth - window.innerWidth;
+
+    const ctx = gsap.context(() => {
+      gsap.to(scrollContainer.current, {
+        x: -totalScrollWidth,
+        ease: "none",
+        scrollTrigger: {
+          trigger: mainContainer.current,
+          start: "top top",
+          end: () => `+=${totalScrollWidth}`,
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+          // markers: true,
+        },
+      });
+    }, mainContainer);
+    return () => ctx.revert();
+  }, []);
+
+  // Scroll Container Animate
+  useGSAP(() => {
+    // Part-2 Image ---------------------------------------------
+    const P2I = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainContainer.current,
+        start: "20% top",
+        end: "+=200%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+    P2I.to(".P2IDiv", {
+      scale: 1,
+    });
+
+    // 3Image-Container ---------------------------------------------
+    const scrollTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainContainer.current,
+        start: "120% top",
+        end: "+=250%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+    scrollTL.fromTo(
+      ".img1",
+      {
+        x: 50,
+      },
+      {
+        x: -50,
+        ease: "none",
+      },
+      "a1",
+    );
+    scrollTL.fromTo(
+      ".img2",
+      {
+        x: 50,
+      },
+      {
+        x: -50,
+        ease: "none",
+      },
+      "a1",
+    );
+    scrollTL.fromTo(
+      ".img3",
+      {
+        x: 50,
+      },
+      {
+        x: -50,
+        ease: "none",
+      },
+      "a1",
+    );
+    scrollTL.fromTo(
+      ".img1C",
+      {
+        x: 100,
+      },
+      {
+        x: -100,
+        ease: "none",
+      },
+      "a1",
+    );
+    scrollTL.fromTo(
+      ".img2C",
+      {
+        x: 100,
+      },
+      {
+        x: -100,
+        ease: "none",
+      },
+      "a1",
+    );
+    scrollTL.fromTo(
+      ".img3C",
+      {
+        x: 100,
+      },
+      {
+        x: -100,
+        ease: "none",
+      },
+      "a1",
+    );
+
+    // 4PHover ---------------------------------------------
+    const P4Hover = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainContainer.current,
+        start: "540% top",
+        end: "+=100%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+    // P4Hover.fromTo('.PHover4',
+    //     {
+    //         y: 200,
+    //         opacity: 0
+    //     },
+    //     {
+    //         y: 0,
+    //         opacity: 1,
+    //         ease: 'power3.inOut'
+    //     }
+    // )
+    // P4Hover.to('.LineXfull ',{
+    //     width:'100%',
+    //     stagger:{
+    //         each:'0.02',
+    //         ease:'power1.in'
+    //     },
+    //     ease:'power1.in'
+    // })
+
+    // Marrakech2 ---------------------------------------------
+    const Marrakech2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainContainer.current,
+        start: "350% top",
+        end: "+=100%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+    Marrakech2.fromTo(
+      ".Marrakech2",
+      {
+        y: 200,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        ease: "power3.inOut",
+      },
+    );
+
+    // 5Img cont ------------------------------------------------
+    const IC5 = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainContainer.current,
+        start: "650% top",
+        end: "+=200%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+    IC5.fromTo(
+      ".img5",
+      {
+        x: 80,
+      },
+      {
+        x: -80,
+        ease: "none",
+      },
+      "a1",
+    );
+
+    // 6 cont ---------------------------------------------
+    // const contA6 = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: mainContainer.current,
+    //         start: '750% top',
+    //         end: '+=100%',
+    //         scrub: true,
+    //         // markers: true,
+    //     },
+    // })
+    // contA6.fromTo('.contA6',
+    //     {
+    //         y: 200,
+    //         opacity: 0
+    //     },
+    //     {
+    //         y: 0,
+    //         opacity: 1,
+    //         ease: 'power3.inOut'
+    //     }
+    // )
+
+    // 7 cont ------------------------------------------------
+    const IC6 = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainContainer.current,
+        start: "850% top",
+        end: "+=200%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+    IC6.fromTo(
+      ".img6",
+      {
+        x: 80,
+      },
+      {
+        x: -80,
+        ease: "none",
+      },
+      "a1",
+    );
+  });
+
+  // Mouse Move Hover Container The Image Can Move Left and right
+  useEffect(() => {
+    if (!MouseMoveHoverCont.current) return;
+
+    const container = MouseMoveHoverCont.current;
+
+    const handleMouseMove = (e) => {
+      const bounds = container.getBoundingClientRect();
+      const centerX = bounds.left + bounds.width / 2;
+      const mouseX = e.clientX;
+
+      const direction = mouseX < centerX ? -50 : 50;
+
+      gsap.to(".group-hover\\:opacity-100, .hover-img", {
+        x: gsap.utils.clamp(-50, 50, (mouseX - centerX) * 0.15),
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(".hover-img", {
+        x: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    };
+
+    container.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      container.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
+  const hoverShiftActivate = (el) => {
+    if (!el) return;
+    gsap.to(el, {
+      x: 50,
+      color: "#B97241",
+      duration: 1,
+      ease: "power3.out",
+    });
+  };
+
+  const hoverShiftDeactivate = (el) => {
+    if (!el) return;
+    gsap.to(el, {
+      x: 0,
+      color: "#1A1A1A",
+      duration: 1,
+      ease: "power3.out",
+    });
+  };
+  //  Marrakech ------------------------------------------------
+  //     <div className='w-[50vw] mr-[10vw] h-screen flex justify-center items-center'>
+  //         <div className='w-fit h-fit flex flex-col gap-8'>
+  //             <p className=' uppercase Font_YV COLOR_TEXT_RED PLA opacity-0'></p>
+  //             <img src={`/svgs/Text-Horizontal.svg`} alt="SVG" className=' PLA opacity-0' />
+  //         </div>
+  //     </div>
+
+  //     {/* Part-2 Image -----------------------------------------------*/}
+  //     <div className='w-[60vw] h-screen overflow-hidden HiIMG '>
+
+  //         <Image src={`/imgs/h4.webp`} className='w-full h-full P2IDiv PLA opacity-0 object-cover object-center scale-[1.1]' width={2000} height={2000} alt='Img' />
+  //     </div>
+
+  //     {/* 3Image-Container ------------------------------------------- */}
+  //     <div className='w-fit h-screen relative flex items-center pl-[15vw] pr-[10vw] COLOR_BG_RED justify-center gap-[12vw]'>
+
+  //         {/* 1Cont-Image */}
+  //         <div className='w-fit h-fit flex gap-4 img1C img1 will-change-transform '>
+  //             {/* Img-cont */}
+  //             <div className='w-[413px] aspect-[4/5]  overflow-hidden '>
+  //                 <Image src={`/imgs/h2.webp`} className='w-full   h-full object-cover object-center scale-[1.2]' width={1000} height={1000} alt='Img' />
+  //             </div>
+  //             {/* Text-Cont */}
+  //             <div className='w-fit full  flex flex-col justify-between Font_Q font-normal text-[#E4BD95]'>
+  //                 <h2 className=' tracking-tighter'>01</h2>
+  //                 <div className='w-full h-fit flex flex-col uppercase'>
+  //                     <h3 className=' tracking-tighter'>Resort</h3>
+  //                     <h3 className=' tracking-tighter'>exterior</h3>
+  //                 </div>
+  //             </div>
+  //         </div>
+
+  //         {/* 2Cont-Image */}
+  //         <div className='w-fit h-fit flex img2C img2 will-change-transform '>
+  //             {/* Img-cont */}
+  //             <div className='w-[413px] aspect-[4/5]  overflow-hidden'>
+  //                 <Image src={`/imgs/h1.webp`} className='w-full  h-full object-cover object-center scale-[1.2]' width={1000} height={1000} alt='Img' />
+  //             </div>
+  //         </div>
+
+  //         {/* 3Cont-Image */}
+  //         <div className='w-fit h-fit flex gap-4 img3C img3 will-change-transform '>
+  //             {/* Text-Cont */}
+  //             <div className='w-fit full  flex flex-col justify-between items-end Font_Q font-normal text-[#E4BD95]'>
+  //                 <h2 className=' tracking-tighter'>02</h2>
+  //                 <div className='w-full h-fit flex flex-col uppercase text-end'>
+  //                     <h3 className=' tracking-tighter'>Ceremony </h3>
+  //                     <h3 className=' tracking-tighter'>lawn</h3>
+  //                 </div>
+  //             </div>
+  //             {/* Img-cont */}
+  //             <div className='w-[413px] aspect-[4/5]  overflow-hidden'>
+  //                 <Image src={`/imgs/h3.webp`} className='w-full   h-full object-cover object-center scale-[1.2]' width={1000} height={1000} alt='Img' />
+  //             </div>
+  //         </div>
+
+  //     </div>
+
+  //     {/* Marrakech 2 ------------------------------------------------  */}
+  //     <div className='w-[50vw] mr-[10vw] h-screen flex justify-center items-center'>
+  //         <div className='w-fit h-fit Marrakech2 flex flex-col gap-8'>
+  //             <p className=' uppercase Font_YV text-[#75171E]'>Explore Marrakech</p>
+  //             <img src={`/svgs/Text-Horizontal.svg`} alt="SVG" />
+  //         </div>
+  //     </div>
+
+  //     {/* 4-Hover Part */}
+  //     <div className='w-[60vw] h-screen  overflow-hidden flex justify-center items-center mr-[15vw]'>
+
+  //         <div ref={MouseMoveHoverCont} className='w-full PHover4 h-fit flex flex-col relative'>
+  //             {
+  //                 data.map((item, index) => {
+  //                     return (
+  //                         <div key={index} className='w-full  group h-fit flex  text-[#1A1A1A] pb-4 pt-8 select-none cursor-pointer relative'>
+  //                             {/* Num-cont */}
+  //                             <div className='text-nowrap whitespace-nowrap'>
+  //                                 <p className='Font_Y'>0{item.id}</p>
+  //                             </div>
+  //                             {/* Text-Cont */}
+  //                             <div
+
+  //                                 className='w-full h-fit flex uppercase Font_Q pl-4 pt-3 pb-4  relative text-nowrap whitespace-nowrap'>
+  //                                 <img src={`/svgs/Arrow.svg`} alt="SVG " />
+  //                                 <div onMouseEnter={() => hoverShiftActivate(textRefs.current[index])}
+  //                                     onMouseLeave={() => hoverShiftDeactivate(textRefs.current[index])} ref={(el) => (textRefs.current[index] = el)} className={`w-fit THover${index} h-full  absolute top-1/2 -translate-y-1/2 z-10 flex justify-center items-center COLOR_BG_CREAM`}>
+  //                                     <h2>{item.title}</h2>
+  //                                 </div>
+  //                             </div>
+  //                             {/* HoverImage */}
+  //                             <div className='hover-img w-[195px] h-[127px] overflow-hidden  pr-4 absolute top-0 left-[80%]  opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out z-20'>
+  //                                 <img src={item.image} alt="Img" className='w-full h-full object-cover object-center' />
+  //                             </div>
+
+  //                             {/* LineXfull */}
+  //                             <div className='h-[1px] LineXfull w-0 absolute bottom-0 left-0 bg-[#33333386]'>
+  //                             </div>
+  //                         </div>
+  //                     )
+  //                 })
+  //             }
+
+  //         </div>
+
+  //     </div>
+
+  useGSAP(()=>{
+
+  },[])
+
+  return (
+    <>
+      <div
+        ref={mainContainer}
+        className="w-full h-screen overflow-x-hidden flex relative COLOR_BG_CREAM"
+      >
+        <div
+          ref={scrollContainer}
+          className="w-fit h-screen flex fixed overflow-hidden top-0 left-0"
+        >
+          {/* 5-Cont */}
+          <div className="w-fit  h-screen flex  justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-fit h-fit flex  ">
+              {/* Img-cont */}
+              <div className="w-[413px] aspect-[4/5]  overflow-hidden img5">
+                <Image
+                  src={`/imgs/explorNewImg/City_Palace_1.webp`}
+                  className="w-full h-full  object-cover object-center scale-[1.2]"
+                  width={1000}
+                  height={1000}
+                  alt="Img"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* 6-Cont */}
+          <div className="w-[50vw] h-screen  flex justify-center items-center  ">
+            <div className="w-fit max-w-[665px] contA6 h-fit flex flex-col gap-6 justify-center items-center">
+              <p className=" uppercase Font_YV COLOR_TEXT_RED contA6">
+                
+              </p>
+              <h4 className=" text-[80px]  leading-[80px] Font_Q contA6 COLOR_TEXT_RED uppercase ">
+                City Palace
+              </h4>
+              <div className="w-full max-w-[460px] flex flex-col contA6 justify-center items-center gap-6">
+                <div className="text-[#395238] text-[18px] contA6 COLOR_TEXT_RED text-center Font_YV">
+                  A magnificent lakeside palace complex showcasing centuries of royal heritage. Private guided tours and sunset visits offer breathtaking views over Lake Pichola.
+                </div>
+                {/* BTN */}
+                {/* <button
+                  className="button "
+                  style={{ backgroundColor: "#B97241" }}
+                >
+                  <span className="button__icon-wrapper">
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg"
+                      width="10"
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      width="10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg button__icon-svg--copy "
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
+                  Map
+                </button> */}
+              </div>
+            </div>
+          </div>
+
+          {/* 7-Cont */}
+          <div className="w-fit h-screen mr-[2vw] flex justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-[413px] aspect-[4/5] flex overflow-hidden ">
+              {/* Img-cont */}
+              {/* <div className='w-[90%] h-[90vh]  overflow-hidden img6'> */}
+              <Image
+                src={`/imgs/explorNewImg/City_Palace_2.webp`}
+                className="w-full h-full object-cover  object-center"
+                width={1000}
+                height={1000}
+                alt="Img"
+              />
+              {/* </div> */}
+            </div>
+          </div>
+
+          {/* ///////////////////////////////////////////////////////////////////////////////////////// PART - 2 */}
+
+          {/* 5-Cont */}
+          <div className="w-fit mx-[5vw] h-screen flex  justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-fit h-fit flex  ">
+              {/* Img-cont */}
+              <div className="w-[50vw] h-screen  overflow-hidden img5">
+                <Image
+                  src={`/imgs/explorNewImg/Lake_Pichola_1.webp`}
+                  className="w-full h-full  object-cover object-center scale-[1.2]"
+                  width={2000}
+                  height={2000}
+                  alt="Img"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* 6-Cont */}
+          <div className="w-[50vw] h-screen  flex justify-center items-center  ">
+            <div className="w-fit max-w-[665px] contA6 h-fit flex flex-col gap-6 justify-center items-center">
+              <p className=" uppercase Font_YV COLOR_TEXT_RED contA6">
+                
+              </p>
+              <h4 className=" text-[80px]  leading-[80px] Font_Q contA6 COLOR_TEXT_RED uppercase ">
+                Lake Pichola
+              </h4>
+              <div className="w-full max-w-[460px] flex flex-col contA6 justify-center items-center gap-6">
+                <div className="text-[#395238] text-[18px] contA6 COLOR_TEXT_RED text-center Font_YV">
+                  Experience Udaipur from the water with a private sunset boat ride. Golden skies, marble palaces, and serene lake views create an unforgettable setting.
+                </div>
+                {/* BTN */}
+                {/* <button
+                  className="button "
+                  style={{ backgroundColor: "#B97241" }}
+                >
+                  <span className="button__icon-wrapper">
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg"
+                      width="10"
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      width="10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg button__icon-svg--copy "
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
+                  Map
+                </button> */}
+              </div>
+            </div>
+          </div>
+
+          {/* 7-Cont */}
+          <div className="w-fit h-screen mr-[2vw] flex justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-[413px] aspect-[4/5] flex overflow-hidden ">
+              {/* Img-cont */}
+              {/* <div className='w-[90%] h-[90vh]  overflow-hidden img6'> */}
+              <Image
+                src={`/imgs/explorNewImg/Lake_Pichola_2.webp`}
+                className="w-full h-full object-cover  object-center"
+                width={1000}
+                height={1000}
+                alt="Img"
+              />
+              {/* </div> */}
+            </div>
+          </div>
+
+          {/* ///////////////////////////////////////////////////////////////////////////////////////// PART - 3 */}
+
+          {/* 5-Cont */}
+          <div className="w-fit mx-[5vw] h-screen flex  justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-fit h-fit flex  ">
+              {/* Img-cont */}
+              <div className="w-[50vw] h-fit  overflow-hidden img5">
+                <Image
+                  src={`/imgs/explorNewImg/Taj_Lake_Palace_1.webp`}
+                  className="w-full h-full  object-cover object-center scale-[1.2]"
+                  width={2000}
+                  height={2000}
+                  alt="Img"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* 6-Cont */}
+          <div className="w-[50vw] h-screen  flex justify-center items-center  ">
+            <div className="w-fit max-w-[665px] contA6 h-fit flex flex-col gap-6 justify-center items-center">
+              <p className=" uppercase Font_YV COLOR_TEXT_RED contA6">
+                
+              </p>
+              <h4 className=" text-[80px] leading-[80px] Font_Q contA6 COLOR_TEXT_RED uppercase ">
+                Taj Lake Palace
+              </h4>
+              <div className="w-full max-w-[460px] flex flex-col contA6 justify-center items-center gap-6">
+                <div className="text-[#395238] text-[18px] contA6 COLOR_TEXT_RED text-center Font_YV">
+                  An iconic white-marble palace floating gracefully on the lake. Ideal for an elegant dinner, afternoon tea, or champagne at sunset.
+                </div>
+                {/* BTN */}
+                {/* <button
+                  className="button "
+                  style={{ backgroundColor: "#B97241" }}
+                >
+                  <span className="button__icon-wrapper">
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg"
+                      width="10"
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      width="10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg button__icon-svg--copy "
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
+                  Map
+                </button> */}
+              </div>
+            </div>
+          </div>
+
+          {/* 7-Cont */}
+          <div className="w-fit h-screen mr-[2vw] flex justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-[70vw] h-screen flex overflow-hidden ">
+              {/* Img-cont */}
+              {/* <div className='w-[90%] h-[90vh]  overflow-hidden img6'> */}
+              <img
+                src={`/imgs/explorNewImg/pales.jpg`}
+                className="w-full h-full object-cover  object-center"
+                alt="Img"
+              />
+              {/* </div> */}
+            </div>
+          </div>
+
+          {/* ///////////////////////////////////////////////////////////////////////////////////////// PART - 4 */}
+
+          {/* 5-Cont */}
+          <div className="w-fit mx-[5vw] h-screen flex  justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-fit h-fit flex  ">
+              {/* Img-cont */}
+              <div className="w-[50vw]  aspect-[3/2]  overflow-hidden img5">
+                <Image
+                  src={`/imgs/explorNewImg/The_Oberoi_Udaivilas_1.webp`}
+                  className="w-full h-full  object-cover object-center scale-[1.2]"
+                  width={2000}
+                  height={2000}
+                  alt="Img"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* 6-Cont */}
+          <div className="w-[50vw] h-screen  flex justify-center items-center  ">
+            <div className="w-fit max-w-[665px] contA6 h-fit flex flex-col gap-6 justify-center items-center">
+              <p className=" uppercase Font_YV COLOR_TEXT_RED contA6">
+                
+              </p>
+              <h4 className=" text-[80px] leading-[80px] Font_Q contA6 COLOR_TEXT_RED uppercase text-center  ">
+                The Oberoi Udaivilas
+              </h4>
+              <div className="w-full max-w-[460px] flex flex-col contA6 justify-center items-center gap-6">
+                <div className="text-[#395238] text-[18px] contA6 COLOR_TEXT_RED text-center Font_YV">
+                  A benchmark of Indian luxury. Indulge in a world-class spa, lakeside dining, or sunset cocktails in a setting of timeless grandeur.
+                </div>
+                {/* BTN */}
+                {/* <button
+                  className="button "
+                  style={{ backgroundColor: "#B97241" }}
+                >
+                  <span className="button__icon-wrapper">
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg"
+                      width="10"
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      width="10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg button__icon-svg--copy "
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
+                  Map
+                </button> */}
+              </div>
+            </div>
+          </div>
+
+          {/* 7-Cont */}
+          <div className="w-fit h-screen mr-[2vw] flex justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-[413px] aspect-[4/5] flex overflow-hidden ">
+              {/* Img-cont */}
+              {/* <div className='w-[90%] h-[90vh]  overflow-hidden img6'> */}
+              <Image
+                src={`/imgs/explorNewImg/The_Oberoi_Udaivilas_2.webp`}
+                className="w-full h-full object-cover  object-center"
+                width={1000}
+                height={1000}
+                alt="Img"
+              />
+              {/* </div> */}
+            </div>
+          </div>
+
+          {/* ///////////////////////////////////////////////////////////////////////////////////////// PART - 5 */}
+
+          {/* 5-Cont */}
+          <div className="w-fit mx-[5vw] h-screen flex  justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-fit h-fit flex  ">
+              {/* Img-cont */}
+              <div className="w-[50vw] h-fit  overflow-hidden img5">
+                <Image
+                  src={`/imgs/explorNewImg/Bagore_Ki_Haveli_1.webp`}
+                  className="w-full h-full  object-cover object-center scale-[1.2]"
+                  width={2000}
+                  height={2000}
+                  alt="Img"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* 6-Cont */}
+          <div className="w-[50vw] h-screen  flex justify-center items-center  ">
+            <div className="w-fit max-w-[665px] contA6 h-fit flex flex-col gap-6 justify-center items-center">
+              <p className=" uppercase Font_YV COLOR_TEXT_RED contA6">
+                
+              </p>
+              <h4 className=" text-[80px] leading-[80px] Font_Q contA6 COLOR_TEXT_RED uppercase text-center ">
+                Bagore Ki Haveli
+              </h4>
+              <div className="w-full max-w-[460px] flex flex-col contA6 justify-center items-center gap-6">
+                <div className="text-[#395238] text-[18px] contA6 COLOR_TEXT_RED text-center Font_YV">
+                 An 18th-century haveli offering a glimpse into Rajasthan’s cultural richness. The evening folk performance is particularly enchanting.
+                </div>
+                {/* BTN */}
+                {/* <button
+                  className="button "
+                  style={{ backgroundColor: "#B97241" }}
+                >
+                  <span className="button__icon-wrapper">
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg"
+                      width="10"
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      width="10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg button__icon-svg--copy "
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
+                  Map
+                </button> */}
+              </div>
+            </div>
+          </div>
+
+          {/* 7-Cont */}
+          <div className="w-fit h-screen mr-[2vw] flex justify-center items-center">
+            {/* 2Cont-Image */}
+            <div className="w-[70vw] h-screen flex overflow-hidden ">
+              {/* Img-cont */}
+              {/* <div className='w-[90%] h-[90vh]  overflow-hidden img6'> */}
+              <img
+                src={`/imgs/explorNewImg/bkh.jpg`}
+                className="w-full h-full object-cover  object-center"
+                
+                alt="Img"
+              />
+              {/* </div> */}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Shop/>
+      
+    </>
+  );
+};
+
+export default Explore;

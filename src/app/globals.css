@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Font_MLD;
+  src: url('/fonts/MonsieurLaDoulaise-Regular.ttf');
+}
+
+@font-face {
+  font-family: Font_Q;
+  src: url('/fonts/final/Norman.woff2');
+}
+
+@font-face {
+  font-family: Font_YIV;
+  src: url('/fonts/final/Parfumerie-Script-Regular.woff2');
+}
+
+@font-face {
+  font-family: Font_YV;
+  src: url('/fonts/final/Open-Sans-Condensed.woff2');
+}
+
+
+body {
+  position: relative;
+  font-family: Helvetica;
+  scroll-behavior: smooth;
+  background-color: #EFDFCB;
+}
+
+.Font_MLD {
+  font-family: Font_MLD;
+}
+
+.Font_Q {
+  font-family: Font_Q;
+}
+
+.Font_YIV {
+  font-family: Font_YIV;
+}
+
+.Font_YV {
+  font-family: Font_YV;
+}
+
+h2 {
+  font-size: 3.75rem;
+  line-height: 2.76rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  line-height: 2.6rem;
+}
+
+p {
+  font-size: 20px;
+  line-height: 22px;
+}
+
+
+
+@media screen and (max-width: 700px) {
+  p {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+}
+
+
+/* .COLOR_BG_RED{
+  background-color: #B97241;
+}
+.COLOR_TEXT_RED{
+  color: #B97241;
+} */
+
+/* OLD color ----------------------------- */
+.COLOR_BG_RED{
+  background-color: #551301;
+}
+.COLOR_TEXT_RED{
+  color: #551301;
+}
+
+
+
+.COLOR_TEXT_ORANGE{
+  color: #B97241;
+}
+.COLOR_BG_ORANGE{
+  background-color: #B97241;
+}
+.COLOR_TEXT_CREAM{
+  color: #EFDFCB;
+}
+.COLOR_BG_CREAM{
+  background-color: #EFDFCB;
+}
+
+
+/* 
+
+label{
+ display:flex;
+  flex-direction:column;
+  width:70px;
+  cursor:pointer;
+}
+
+label span{
+  background: #5e2222;
+  border-radius:10px;
+  height:7px;
+  margin: 7px 0;
+  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+}
+
+
+span:nth-of-type(1){
+  width:50%;
+  
+}
+
+span:nth-of-type(2){
+  width:100%;
+}
+
+
+span:nth-of-type(3){
+  width:75%;
+ 
+}
+
+
+input[type="checkbox"]{
+  display:none;
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(1){
+  transform-origin:bottom;
+  transform:rotatez(45deg) translate(8px,0px)
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(2){
+  
+  transform-origin:top;
+  transform:rotatez(-45deg)
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(3){
+  
+  transform-origin:bottom;
+  width:50%;
+  transform: translate(30px,-11px) rotatez(45deg);
+
+} */
+
+.button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--clr);
+  color: #fff;
+  border-radius: 10rem;
+ font-family: Font_YV;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+}
+
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #EFDFCB;
+  border-radius: 50%;
+  color: #551301;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #551301;
+}
+
+.button:hover .button__icon-wrapper {
+  color: #551301;
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+
+
+
+/* ==================================================== */
+/* .imgQ1 {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: box-shadow 0.3s ease;
+}
+
+.tiltSection {
+  perspective: 1000px;
+} */
+
+
+.imgQ1 {
+  transition: transform 0.2s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.img3d-wrapper {
+  perspective: 800px;
+}
