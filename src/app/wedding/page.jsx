@@ -1,6 +1,3 @@
-import RSVP from "@/components/common/RSVP";
-import CardX from "@/components/sections/wedding/CardX";
-import WeddingHome from "@/components/sections/wedding/WeddingHome";
 import WebPageSchema from "@/components/seo/WebPageSchema";
 import { Const } from "@/components/utils/Constants";
 import React from "react";
@@ -26,9 +23,8 @@ const page = () => {
         description="Explore the complete wedding itinerary of Misha & Dylan including Mehendi, Haldi, Sangeet, Wedding Ceremony, and Reception schedule with dates and timings."
         url={`${Const.ClientLink}/wedding`}
       />
-      <div className="w-full h-fit flex flex-col">
-        <WeddingHome />
-        <CardX />
+      <div className="w-full h-svh flex flex-col justify-center items-center">
+       <h2 className="Font_Q COLOR_TEXT_RED">Under Development</h2>
       </div> 
     </>
   );

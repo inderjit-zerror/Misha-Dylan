@@ -5,31 +5,37 @@
   src: url('/fonts/MonsieurLaDoulaise-Regular.ttf');
 }
 
-@font-face {
+/* @font-face {
   font-family: Font_Q;
   src: url('/fonts/final/Norman.woff2');
-}
+} */
 
 @font-face {
   font-family: Font_YIV;
   src: url('/fonts/final/Parfumerie-Script-Regular.woff2');
 }
 
-@font-face {
+/* @font-face {
   font-family: Font_YV;
   src: url('/fonts/final/Open-Sans-Condensed.woff2');
-}
+} */
 
 
 body {
   position: relative;
   font-family: Helvetica;
   scroll-behavior: smooth;
-  background-color: #EFDFCB;
+  background-color: #F6F5F1;
 }
 
 .Font_MLD {
   font-family: Font_MLD;
+}
+
+
+@font-face {
+  font-family: Font_Q;
+  src: url('/fonts/custom_new_fonts/NtVoyager.otf');
 }
 
 .Font_Q {
@@ -38,6 +44,12 @@ body {
 
 .Font_YIV {
   font-family: Font_YIV;
+}
+
+
+@font-face {
+  font-family: Font_YV;
+  src: url('/fonts/custom_new_fonts/ClagioR.otf');
 }
 
 .Font_YV {
@@ -83,10 +95,10 @@ p {
 
 /* OLD color ----------------------------- */
 .COLOR_BG_RED{
-  background-color: #551301;
+  background-color: #C53D2E;
 }
 .COLOR_TEXT_RED{
-  color: #551301;
+  color: #C53D2E;
 }
 
 
@@ -98,10 +110,10 @@ p {
   background-color: #B97241;
 }
 .COLOR_TEXT_CREAM{
-  color: #EFDFCB;
+  color: #F6F5F1;
 }
 .COLOR_BG_CREAM{
-  background-color: #EFDFCB;
+  background-color: #F6F5F1;
 }
 
 

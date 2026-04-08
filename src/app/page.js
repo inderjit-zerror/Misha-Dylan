@@ -1,12 +1,7 @@
-import RSVP from "@/components/common/RSVP";
-import Countdown from "@/components/sections/home/Countdown";
-import Destiny from "@/components/sections/home/Destiny";
-import FAQ from "@/components/sections/home/FAQ";
-import Hearts from "@/components/sections/home/Hearts";
-import HomeHeroSection from "@/components/sections/home/HomeHeroSection";
-import Itinerary from "@/components/sections/home/Itinerary";
-import Line from "@/components/sections/home/Line";
-import WeddingHero from "@/components/sections/home/WeddingHero";
+
+import HeroSectionHome from "@/components/sections/NewHome/HeroSectionHome";
+import MarqueeGallery from "@/components/sections/NewHome/MarqueeGallery";
+import SectionMain from "@/components/sections/NewHome/SectionMain";
 import TravelInfo from "@/components/sections/venue/TravelInfo";
 import WebPageSchema from "@/components/seo/WebPageSchema";
 import { Const } from "@/components/utils/Constants";
@@ -62,16 +57,9 @@ export default function Home() {
         description="Welcome to the official wedding website of Misha & Dylan. Join us in celebrating our special day and explore event details, itinerary, venue information, and RSVP updates."
         url={`${Const.ClientLink}/`}
       />
-      <HomeHeroSection />
-
-      <WeddingHero />
-      <Line />
-      <Countdown />
-      <Hearts />
-      <Destiny />
-      {/* <Itinerary /> */}
-      <TravelInfo />
-      {/* <FAQ /> */}
+      <SectionMain />
+     <HeroSectionHome />
+     <MarqueeGallery />
     </>
   );
 }

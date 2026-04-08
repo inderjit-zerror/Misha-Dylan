@@ -1,0 +1,10 @@
+ <HomeHeroSection />
+
+      <WeddingHero />
+      <Line />
+      <Countdown />
+      <Hearts />
+      <Destiny />
+      {/* <Itinerary /> */}
+      <TravelInfo />
+      {/* <FAQ /> */}
