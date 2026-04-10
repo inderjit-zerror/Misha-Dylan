@@ -3,7 +3,7 @@ import React from 'react'
 
 const SectionMain = () => {
   return (
-    <div className='w-full min-h-screen COLOR_BG_CREAM relative'>
+    <div className='w-full min-h-screen COLOR_BG_CREAM relative pt-10'>
         <div className='w-full h-fit flex justify-center items-center pt-[4vh]'>
             <h1 className='Font_Q text-[17vw] COLOR_TEXT_RED'>MISHA & DYLAN</h1>
         </div>
