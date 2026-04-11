@@ -110,7 +110,7 @@ const NavBar = () => {
   }
 
   return (
-    <div ref={navRef} className='w-full h-[46px] mt-10 flex justify-between fixed top-0 pt-15 left-0   items-center z-100 px-20'>
+    <div ref={navRef} className='w-full h-[46px] mt-10 flex justify-between fixed top-0 pt-15 left-0 gap-10 items-center z-100 px-20'>
       {/* Left */}
       <div className='w-3/5 h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[12px] COLOR_TEXT_RED '>
         <Link href={`/`} ><div className={`w-fit ${pathname === '/' && (' border-b border-[#551301]')} h-fit flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div> The wedding</div></Link>
@@ -126,13 +126,11 @@ const NavBar = () => {
 
       {/* Right */}
       <div className='w-3/5  h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[12px]   COLOR_TEXT_RED'>
-        <Link href={``} ><div className={`w-fit h-fit ${pathname === '/venue' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Travel </div></Link>
+        <Link href={`/travel-acmo`} ><div className={`w-fit h-fit ${pathname === '/travel-acmo' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Travel </div></Link>
 
-        <Link href={``} ><div className={`w-fit h-fit ${pathname === '/venue' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Salon Services</div></Link>
+        <Link href={`/salon-services`} ><div className={`w-fit h-fit ${pathname === '/salon-services' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Salon Services</div></Link>
         <Link href={``} ><div className={`w-fit h-fit ${pathname === '/venue' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Registry / Charity </div></Link>
         <Link href={``} ><div className={`w-fit h-fit ${pathname === '/venue' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Travel Tips & FAQs  </div></Link>
-
-
        
         {/* BTN */}
 
