@@ -1,4 +1,6 @@
 
+import Countdown from "@/components/sections/home/Countdown";
+import Hearts from "@/components/sections/home/Hearts";
 import HeroSectionHome from "@/components/sections/NewHome/HeroSectionHome";
 import MarqueeGallery from "@/components/sections/NewHome/MarqueeGallery";
 import SectionMain from "@/components/sections/NewHome/SectionMain";
@@ -59,7 +61,9 @@ export default function Home() {
       />
       <SectionMain />
      <HeroSectionHome />
-     <MarqueeGallery />
+     {/* <MarqueeGallery /> */}
+     <Countdown />
+     <Hearts />
     </>
   );
 }

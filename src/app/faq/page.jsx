@@ -1,4 +1,4 @@
-import FAQ from '@/components/sections/home/FAQ'
+import FAQ from '@/components/newSection/FAQ'
 import React from 'react'
 
 const faq = () => {

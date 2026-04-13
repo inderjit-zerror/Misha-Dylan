@@ -1,4 +1,4 @@
-import TravelTips from '@/components/common/TravelTips'
+import TravelTips from '@/components/newSection/TravelTips'
 import React from 'react'
 
 const traveltips = () => {

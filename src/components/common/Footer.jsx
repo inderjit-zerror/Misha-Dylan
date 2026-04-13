@@ -1,83 +1,59 @@
-import Link from "next/link";
-import React from "react";
+"use client";
 
-const Footer = () => {
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+export default function Footer() {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      footerRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+      },
+    );
+  }, []);
+
   return (
-    <>
-      <footer className="w-full COLOR_BG_CREAM  border-t border-[#5513013b] max-md:px-5  flex flex-col max-md:justify-center max-sm:items-center  overflow-hidden">
+    <footer className="pt-10 pb-6 px-4">
+      <div
+        ref={footerRef}
+        className="max-w-5xl mx-auto text-center COLOR_TEXT_RED"
+      >
+        {/* Contact Info */}
+        <div className="text-left md:text-center space-y-1 text-xs md:text-sm COLOR_TEXT_RED">
+          <p className="font-medium Font_Q text-xs md:text-sm">
+            Please reach out to us if you have any questions or need assistance:
+          </p>
 
+          <p className="text-xs md:text-sm">
+            <span className="font-medium Font_Q">RSVP Team :</span>{" "}
+            <a href="tel:+919910158374" className="hover:underline Font_YV">
+              +91 99101 58374
+            </a>
+          </p>
 
+          <p className="Font_YV text-xs md:text-sm">
+            <span className="font-medium Font_Q">Logistics Team :</span> +91
+            XXXXXXXX
+          </p>
 
-        <div className="flex max-md:flex-col max-md:justify-center max-sm:items-center py-8 px-10">
-
-
-          <div className="w-fit h-fit flex justify-center items-center   md:my-auto">
-            <Link href={`/`} ><img src={`/svgs/CustomLogo.svg`} alt="Logo" className='h-[50px] object-cover object-center' /></Link>
-          </div>
-
-          <div className="w-[1px] h-[50px] COLOR_BG_RED mx-10 COLOR_TEXT_RED md:my-auto max-md:w-[50px] max-md:h-[1px] max-md:hidden ">
-          </div>
-
-          <div className="w-1/2 flex flex-col COLOR_TEXT_RED max-sm:w-full max-md:mt-5  max-md:text-center   justify-center">
-            <span className=" Font_YV">⁠For any wedding-related questions, please reach out to Sonal & Kush’s wedding planning team at:</span>
-
-            <span className=" Font_YV flex gap-2 max-md:gap-0 max-md:mt-2  max-md:flex-col max-md:text-[14px] max-md:mx-auto max-md:text-center">
-
-              <a href="mailto:sonalskushie@gmail.com"><span className=" relative flex flex-col w-fit  group  cursor-pointer select-none max-md:mx-auto font-semibold">  sonalskushie@gmail.com
-                <div className="h-[1px] w-[0px] COLOR_BG_RED transition-all duration-150 ease-in-out group-hover:w-full select-none  ">
-                </div>
-              </span></a>
-
-
-              <span className="max-md:hidden">|</span>
-
-              <a href="tel:+919358800614"><span className=" relative flex flex-col w-fit  group  cursor-pointer select-none max-md:mx-auto font-semibold">  +91 93588 00614
-                <div className="h-[1px] w-[0px] COLOR_BG_RED transition-all duration-150 ease-in-out group-hover:w-full select-none  ">
-                </div>
-              </span></a>
-
-              <span className="max-md:hidden">|</span>
-
-              <a href="tel:+919310069102"><span className=" relative flex flex-col w-fit  group  cursor-pointer select-none max-md:mx-auto font-semibold">  +91 93100 69102
-                <div className="h-[1px] w-[0px] COLOR_BG_RED transition-all duration-150 ease-in-out group-hover:w-full select-none  ">
-                </div>
-              </span></a>
-            </span>
-
-          </div>
-
-
-
-          <div className="w-fit ml-auto  flex  flex-col COLOR_TEXT_RED max-md:text-[14px] max-md:mx-auto max-md:text-center max-md:mt-5 my-auto ">
-
-            <span className=" Font_YV flex md:justify-end max-md:mx-auto font-semibold ">Payments are securely processed by EDD United Pvt. Ltd.</span>
-
-            {/* <span className=" Font_YV flex gap-2 md:ml-auto max-md:mx-auto">
-              <a href="https://www.bombaylettering.com/" target="blank"><span className=" relative flex flex-col w-fit  group  cursor-pointer select-none font-semibold ">  The Bombay Lettering Company
-                <div className="h-[1px] w-[0px] COLOR_BG_RED transition-all duration-150 ease-in-out group-hover:w-full select-none  ">
-                </div>
-              </span></a>
-
-              &
-              <a href="https://www.zerrorstudios.com/" target="blank"><span className=" relative flex flex-col w-fit  group  cursor-pointer select-none font-semibold">  Zerror Studios
-                <div className="h-[1px] w-[0px] COLOR_BG_RED transition-all duration-150 ease-in-out group-hover:w-full select-none  ">
-                </div>
-              </span></a>
-            </span> */}
-
-          </div>
-
+          <p className="text-xs md:text-sm">
+            <span className="font-medium Font_Q">Email ID :</span>{" "}
+            <a
+              href="mailto:dylanwedsmisha@gmail.com"
+              className="hover:underline Font_YV"
+            >
+              dylanwedsmisha@gmail.com
+            </a>
+          </p>
         </div>
-
-        
-        {/* <span className=" Font_YV flex ml-auto COLOR_BG_CREAM  border-t border-[#5513013b] w-full justify-end px-10 py-2 COLOR_TEXT_RED font-semibold">Payments are securely processed by EDD United Pvt. Ltd.</span> */}
-
-
-      </footer>
-
-
-    </>
+      </div>
+    </footer>
   );
-};
-
-export default Footer;
+}

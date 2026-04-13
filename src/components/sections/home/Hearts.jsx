@@ -38,10 +38,11 @@ const Hearts = () => {
         //     opacity: 0,
         //     ease: 'none'
         // },'obs')
-        TLH.to('.cclt', {
-            opacity: 0,
-            ease: 'none'
-        },'obs')
+
+        // TLH.to('.cclt', {
+        //     opacity: 0,
+        //     ease: 'none'
+        // },'obs')
 
     }, [])
 
@@ -71,18 +72,18 @@ const Hearts = () => {
         <div className='w-full h-[250vh] relative heart_cont cclt'>
             <div className='w-full h-screen overflow-hidden sticky flex flex-col max-sm:hidden justify-center top-0 left-0 COLOR_BG_RED COLOR_TEXT_CREAM uppercase'>
                 {/* 1 */}
-                <div className=' w-full innderHerartCont tlr  h-fit text-[5vw] leading-[5vw] Font_Q flex  gap-[2vw]  justify-center'>
+                <div className=' w-full innderHerartCont tlr  h-fit text-[6vw] leading-[6vw] Font_Q flex  gap-[2vw]  justify-center'>
                     <h1 className=''>Where love</h1>
                     <h1>meets la</h1>
                     <h1>dolce vita</h1>
                 </div>
                 {/* 1 */}
-                <div className=' w-full innderHerartCont2 tlr   whitespace-nowrap flex-nowrap h-fit text-[5vw] leading-[5vw] Font_Q flex gap-[1vw] justify-center'>
+                <div className=' w-full innderHerartCont2 tlr   whitespace-nowrap flex-nowrap h-fit text-[6vw] leading-[6vw] Font_Q flex gap-[1vw] justify-center'>
                     <h1>Pour Love like you’</h1>
                     <h1>  re pouring Wine </h1>
                 </div>
                 {/* 1 */}
-                <div className=' w-full innderHerartCont tlr  h-fit text-[5vw] leading-[5vw] Font_Q flex gap-[5vw] justify-center'>
+                <div className=' w-full innderHerartCont tlr  h-fit text-[6vw] leading-[5vw] Font_Q flex gap-[6vw] justify-center'>
                     <h1>Love under </h1>
                     <h1>the Tuscan Sun </h1>
                     
