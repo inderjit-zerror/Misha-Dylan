@@ -586,13 +586,14 @@ const IntroPanel = () => (
     {/* Opening portrait image */}
     <div className="w-fit h-screen flex justify-center items-center ml-[5vw]">
       <div className="w-[413px] aspect-[4/5] overflow-hidden">
-        <Image
-          src="/imgs/explorNewImg/City_Palace_1.webp"
-          className="w-full h-full object-cover object-center scale-[1.2]"
+        {/* <Image
+          src=""
+          
           width={1000}
           height={1000}
           alt="Florence"
-        />
+        /> */}
+        <img src={`/all_new_images/expF/EXP1.webp`} className="w-full h-full object-cover object-center scale-[1.2]" alt="IMG" />
       </div>
     </div>
 
@@ -635,13 +636,16 @@ const IntroPanel = () => (
     {/* Second portrait */}
     <div className="w-fit h-screen mr-[2vw] flex justify-center items-center">
       <div className="w-[413px] aspect-[4/5] overflow-hidden">
-        <Image
+        {/* <Image
           src="/imgs/explorNewImg/City_Palace_2.webp"
           className="w-full h-full object-cover object-center"
           width={1000}
           height={1000}
           alt="Florence"
-        />
+        /> */}
+
+         <img src={`/all_new_images/expF/EXP2.webp`} className="w-full h-full object-cover object-center" alt="IMG" />
+
       </div>
     </div>
   </>

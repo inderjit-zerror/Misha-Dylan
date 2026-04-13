@@ -10,7 +10,7 @@ const SectionMain = () => {
 
 
         <div className='w-[18%] aspect-5/7 overflow-hidden absolute top-[60%] left-1/2 -translate-y-1/2 -translate-x-1/2'>
-        <img src={`/imgs/newHomeImg/NHHIMG.jpg`} className='w-full h-full object-cover object-center' alt="IMG" />
+        <img src={`/all_new_images/home/h1.jpg`} className='w-full h-full object-cover object-center' alt="IMG" />
         </div>
 
         <div className='w-full h-fit flex justify-end items-center mt-[40vh]'>
