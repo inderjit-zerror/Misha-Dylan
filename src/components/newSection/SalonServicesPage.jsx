@@ -11,7 +11,7 @@ import { useState, useEffect, useRef } from "react";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ACCENT = "#173e3d";
-const BG = "#f9de85";
+const BG = "#f9f6ef";
 const DARK = "#1a1614";
 
 const HOTELS = [
