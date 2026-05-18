@@ -26,7 +26,7 @@ body {
   position: relative;
   font-family: Helvetica;
   scroll-behavior: smooth;
-  background-color: #f9de85;
+  background-color: #fff9ed;
 }
 
 .Font_MLD {
@@ -116,7 +116,7 @@ p {
   color: #F6F5F1;
 }
 .COLOR_BG_CREAM{
-  background-color: #f9de85;
+  background-color: #fff9ed;
 }
 
 .noise:before {
@@ -253,5 +253,5 @@ p {
 
 /* -----------==------------------------------------------------------------------------------------------ */
 .bgFirst{
-  background-color: #f9de85;
+  background-color: #fff9ed;
 }

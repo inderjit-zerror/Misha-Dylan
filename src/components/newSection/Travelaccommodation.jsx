@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ACCENT = "#173e3d";
-const BG = "#f9de85";
+const BG = "#fff9ed";
 
 // Curated Unsplash images for Florence / wedding travel
 const HERO_IMG = `/FinalImage/15.webp`; // Florence panorama
