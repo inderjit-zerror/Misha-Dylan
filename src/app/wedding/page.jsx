@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: "Wedding Itinerary | Dylan & Misha ",
     description: "Complete schedule of Dylan & Misha 's wedding celebrations.",
-    url: "https://www.sonalskushie.com/wedding",
+    url: "https://www.mishaanddylan.com/wedding",
     type: "website",
   },
 };

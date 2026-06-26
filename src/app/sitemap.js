@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "";
+  const baseUrl = "https://www.mishaanddylan.com";
 
   return [
     {

@@ -1,6 +1,6 @@
 export const Const = {
   Brand: "Dylan & Misha ",
-  ClientLink: "https://www.sonalskushie.com",
+  ClientLink: "https://www.mishaanddylan.com",
   Desc:'Celebrate the wedding of Dylan & Misha . Find itinerary, venue details, hotel information & RSVP.',
   keywords:[
     "wedding website",

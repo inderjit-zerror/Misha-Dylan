@@ -19,10 +19,10 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "sonalskushie.com", // Non-www domain
+            value: "mishaanddylan.com", // Non-www domain
           },
         ],
-        destination: "https://www.sonalskushie.com/:path*", // Redirect to www
+        destination: "https://www.mishaanddylan.com/:path*", // Redirect to www
         permanent: true, // 301 redirect
       },
     ];

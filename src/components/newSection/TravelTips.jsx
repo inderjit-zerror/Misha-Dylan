@@ -66,7 +66,7 @@ export default function TravelTips() {
           </p>
           <div className=" w-fit h-fit flex sm:gap-2 mt-4 justify-center items-center max-sm:flex-col">
 
-             <a href="mailto:sonalskushie@gmail.com" >
+             <a href="mailto:dylanwedsmisha@gmail.com" >
               <div className=" relative group flex flex-col max-sm:mt-2">
               <p className="Font_YV ">mishadylan@gmail.com</p>
               <div className="w-0 h-px bg-[#551301]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>

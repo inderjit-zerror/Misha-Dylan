@@ -279,7 +279,7 @@ export default function ReserveYourStay() {
                         <p className="text-xs Font_YV COLOR_TEXT_RED font-semibold">💰 {formatINR(total)}</p>
                     </div>
                     <p className="text-[10px] Font_YV text-[#7a6a55]">
-                        For assistance: sonalskushie@gmail.com,
+                        For assistance: dylanwedsmisha@gmail.com,
                         <br />
                         +91 93588 00614
                     </p>
@@ -347,7 +347,7 @@ export default function ReserveYourStay() {
 
                         {/* Contact info */}
                         <div className="mt-6 space-y-2.5">
-                            <ContactRow icon="email" text="sonalskushie@gmail.com" />
+                            <ContactRow icon="email" text="dylanwedsmisha@gmail.com" />
                             <ContactRow icon="phone" text="+91 93588 00614" />
                             <ContactRow icon="phone" text="+91 93100 69102" />
                         </div>
