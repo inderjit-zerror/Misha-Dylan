@@ -57,7 +57,7 @@ export const metadata = {
     url: Const.ClientLink,
     images: [
       {
-        url: "/imgs/logo/og.png", // fallback OG image
+        url: "/og.png", // fallback OG image
         width: 1200,
         height: 630,
         alt: Const.Brand,
@@ -69,7 +69,7 @@ export const metadata = {
     card: "summary_large_image",
     title: Const.Brand,
     description: Const.Desc,
-    images: ["/imgs/logo/og.png"],
+    images: ["/og.png"],
   },
 
   icons: {

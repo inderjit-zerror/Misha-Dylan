@@ -33,7 +33,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.DylansMishaie.com/imgs/logo/og.png",
+        url: "https://www.DylansMishaie.com/og.png",
         width: 1200,
         height: 630,
         alt: "Dylan & Misha Wedding",
@@ -46,7 +46,7 @@ export const metadata = {
     title: "Dylan & Misha  Wedding",
     description:
       "Official wedding website of Dylan & Misha. RSVP and explore event details.",
-    images: ["https://www.DylansMishaie.com/imgs/logo/og.png"],
+    images: ["https://www.DylansMishaie.com/og.png"],
   },
 };
 

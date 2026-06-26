@@ -20,7 +20,7 @@ const WebPageSchema = ({ name, description, url }) => {
 
     primaryImageOfPage: {
       "@type": "ImageObject",
-      url: `${url}/imgs/logo/og.png`,
+      url: `${url}/og.png`,
     },
 
     inLanguage: "en-IN",
