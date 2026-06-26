@@ -28,12 +28,12 @@ export const metadata = {
     title: "Dylan & Misha Wedding | Official Website",
     description:
       "Celebrate the wedding of Dylan & Misha. Find itinerary, venue details, hotel information & RSVP.",
-    url: "https://www.DylansMishaie.com",
+    url: "https://www.dylansmishaie.com",
     siteName: "Dylan & Misha  Wedding",
     type: "website",
     images: [
       {
-        url: "https://www.DylansMishaie.com/og.png",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Dylan & Misha Wedding",
@@ -46,7 +46,7 @@ export const metadata = {
     title: "Dylan & Misha  Wedding",
     description:
       "Official wedding website of Dylan & Misha. RSVP and explore event details.",
-    images: ["https://www.DylansMishaie.com/og.png"],
+    images: ["/og.png"],
   },
 };
 
