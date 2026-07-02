@@ -24,7 +24,7 @@ const events = [
   },
   {
     date: "18 September",
-    title: "Cocktails & Canapés",
+    title: "Sangeet",
     time: "7:00 PM",
     venue: "Villa Palmieri | 5:00 PM",
     transfer: `Transfers to Villa Palmieri will begin at 4:30 PM. Followed by Afterparty at Auberge Hotel `,

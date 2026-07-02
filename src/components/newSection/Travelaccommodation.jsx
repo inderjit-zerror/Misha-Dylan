@@ -343,16 +343,15 @@ export default function Travelaccommodation() {
                 Florence
               </h2>
               <p className="Font_YV" style={{ ...bodyStyle, maxWidth: 420 }}>
-                We've secured special room rates at luxury hotels in Florence. A
-                selection of rooms and suites across beautiful properties in the
-                heart of the city — with easy access to Florence's historic
-                landmarks and wedding venues.
+               We have secured special room rates at select luxury hotels in Florence for Dylan & Misha’s wedding celebrations.
               </p>
               <p className="Font_YV" style={{ ...bodyStyle, marginTop: 16 }}>
-                Rates vary by category and property. Most rates include
-                breakfast and hotel service; VAT and city tax are additional.
+                A curated selection of rooms and suites is available across beautiful properties in the heart of the city, with easy access to Florence’s historic landmarks and the wedding venues.
               </p>
-              <div
+              <p className="Font_YV" style={{ ...bodyStyle, marginTop: 16 }}>
+                Rates vary by room category and property. Most rates include breakfast and hotel service; VAT and city tax will be additional as applicable.
+              </p>
+              {/* <div
                 style={{
                   marginTop: 36,
                   // padding: "28px 32px",
@@ -360,7 +359,7 @@ export default function Travelaccommodation() {
                   color: ACCENT,
                 }}
               >
-                <p className="Font_Q mb-2">Book your room</p>
+                <p className="Font_Q mb-2">Book Your Room</p>
                 <p className="Font_YV">
                   Contact our RSVP team for the dedicated reservation link.
                 </p>
@@ -378,7 +377,85 @@ export default function Travelaccommodation() {
                     dylanwedsmisha@gmail.com
                   </a>
                 </div>
-              </div>
+              </div> */}
+
+              <div
+  style={{
+    marginTop: 36,
+    color: ACCENT,
+  }}
+>
+  <p className="Font_Q mb-2">Book Your Room</p>
+
+  <p className="Font_YV" style={{ marginBottom: 20 }}>
+    Please use the dedicated booking options below to reserve your stay.
+  </p>
+
+  <div
+    className="Font_YV"
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: 16,
+    }}
+  >
+    <div>
+      <strong>The St. Regis Florence</strong>
+      <br />
+      <a
+        href="https://tinyurl.com/mishadylanstregisflorence"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          color: ACCENT,
+          textDecoration: "underline",
+          display: "inline-block",
+          marginTop: 4,
+        }}
+      >
+        Reserve Your Room
+      </a>
+    </div>
+
+    <div>
+      <strong>The Westin Excelsior Florence</strong>
+      <br />
+      <a
+        href="https://tinyurl.com/mishaanddylanexcelsiorflorence"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          color: ACCENT,
+          textDecoration: "underline",
+          display: "inline-block",
+          marginTop: 4,
+        }}
+      >
+        Reserve Your Room
+      </a>
+    </div>
+
+    <div style={{ marginTop: 8 }}>
+      <p style={{ marginBottom: 8 }}>
+        For any assistance with bookings, please contact our RSVP team:
+      </p>
+
+      <a
+        href="tel:+919910158374"
+        style={{ color: ACCENT, display: "block" }}
+      >
+        +91 99101 58374
+      </a>
+
+      <a
+        href="mailto:dylanwedsmisha@gmail.com"
+        style={{ color: ACCENT, display: "block" }}
+      >
+        dylanwedsmisha@gmail.com
+      </a>
+    </div>
+  </div>
+</div>
             </div>
             <div
               className="col-image max-sm:border-[0.5vw] sm:border-[0.5vw] border-[#F89A8E]"
