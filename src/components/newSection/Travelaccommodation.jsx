@@ -416,7 +416,6 @@ export default function Travelaccommodation() {
         Reserve Your Room
       </a>
     </div>
-
     <div>
       <strong>The Westin Excelsior Florence</strong>
       <br />
@@ -481,34 +480,7 @@ export default function Travelaccommodation() {
             </div>
           </div>
 
-          {/* Hotel */}
-
-          {/* <div className="section-reveal">
-            <p
-              className="Font_YV font-semibold"
-              style={{
-                fontSize: 16,
-                letterSpacing: "0.35em",
-                textTransform: "uppercase",
-                color: ACCENT,
-                marginBottom: 24,
-              }}
-            >
-              Participating Properties
-            </p>
-            <div
-              className="hotels-grid"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-                gap: 2,
-              }}
-            >
-              {hotels.map((h, i) => (
-                <HotelCard key={i} hotel={h} index={i + 1} />
-              ))}
-            </div>
-          </div> */}
+          
         </section>
       </main>
 
