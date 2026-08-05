@@ -402,7 +402,18 @@ export default function Travelaccommodation() {
     <div>
       <strong>The St. Regis Florence</strong>
       <br />
-      <a
+      <p
+      
+        style={{
+          color: ACCENT,
+          // textDecoration: "underline",
+          display: "inline-block",
+          marginTop: 4,
+        }}
+      >
+        Booking link for excelsior is valid until the 9th Aug’2026 CET
+      </p>
+      {/* <a
         href="https://tinyurl.com/mishadylanstregisflorence"
         target="_blank"
         rel="noopener noreferrer"
@@ -414,7 +425,7 @@ export default function Travelaccommodation() {
         }}
       >
         Reserve Your Room
-      </a>
+      </a> */}
     </div>
     <div>
       <strong>The Westin Excelsior Florence</strong>
