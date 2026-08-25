@@ -110,6 +110,7 @@ const NavBar = () => {
     { name: "Salon Services", path: "/salon-services" },
     { name: "Travel Tips", path: "/travel-tips" },
     { name: "FAQs", path: "/faq" },
+    // { name: "Gift Registry", path: "https://www.weddingshop.com/giftlist/mishaanddylan" },
     
   ];
 
@@ -144,6 +145,16 @@ const NavBar = () => {
               </div>
             </Link>
           ))}
+
+           <Link target="blank" href={'https://www.weddingshop.com/giftlist/mishaanddylan'}>
+              <div
+                className={`relative text-[16px] Font_YV text-[#016342] uppercase cursor-pointer group `}
+              >
+                <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#016342] group-hover:w-full duration-300"></div>
+
+                Gift Registry
+              </div>
+            </Link>
 
           {/* RSVP BUTTON */}
           <Link
@@ -183,6 +194,16 @@ const NavBar = () => {
             </Link>
           ))}
         </div>
+
+          <Link target="blank" href={'https://www.weddingshop.com/giftlist/mishaanddylan'}>
+              <div
+                className={`relative text-[22px] mt-5  w-fit text-[#016342] uppercase cursor-pointer group `}
+              >
+                <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#016342] group-hover:w-full duration-300"></div>
+
+                Gift Registry
+              </div>
+            </Link>
 
         {/* RSVP BTN */}
         <Link
